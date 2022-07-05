@@ -1,0 +1,12 @@
+version: '3'
+services:
+  media_service:
+    build: .
+    ports:
+      - '8000:8000'
+    volumes:
+      - .:/app
+      - /app/src/static
+      - /app/src/media
+    environment:
+      - PORT=8000

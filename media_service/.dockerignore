@@ -1,0 +1,14 @@
+../Virtual_Envs
+*.py[cod]
+__pycache__
+audio_book/__pycache__
+audio_book/migrations
+core/__pycache__
+media
+music/__pycache__
+music/migrations
+podcast/__pycache__
+podcast/migrations
+radio/__pycache__
+radio/migrations
+static
