@@ -104,7 +104,7 @@ class Lyrics(models.Model):
 
     lyrics_title = models.CharField(max_length=100,default='Other',null=False , blank= False)
     lyrics_detail = models.TextField(blank=True, null=True, max_length=1023)
-    track_id = models.ForeignKey(Track, default=0, related_name='Lyrics', on_delete=models.DO_NOTHING)
+    track_id = models.ForeignKey(Track, default=0, related_name='lyrics', on_delete=models.DO_NOTHING)
     user_id =  models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
