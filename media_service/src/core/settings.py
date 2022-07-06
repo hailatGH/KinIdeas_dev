@@ -130,7 +130,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '/home/hailemichael_atrsaw/Projects/Django/KinIdeas_dev/media_service/src/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -144,9 +144,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ],
+#    'DEFAULT_PERMISSION_CLASSES': [
+#        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+#    ],
 
     "DEFAULT_RENDERER_CLASSES": [
         "rest_framework.renderers.JSONRenderer",
