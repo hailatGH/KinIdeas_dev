@@ -21,5 +21,10 @@ urlpatterns = [
     path('genre/', views.genre_list_create_view),
     path('genre/<int:pk>/update/', views.genre_update_view),
     path('genre/<int:pk>/delete/', views.genre_destroy_view),
-    path('genre/<int:pk>/', views.genre_detail_view)
+    path('genre/<int:pk>/', views.genre_detail_view),
+
+    path('lyrics/', views.lyrics_list_create_view),
+    path('lyrics/<int:pk>/update/', views.lyrics_update_view),
+    path('lyrics/<int:pk>/delete/', views.lyrics_destroy_view),
+    path('lyrics/<int:pk>/', views.lyrics_detail_view)
 ]

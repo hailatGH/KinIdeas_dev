@@ -1,9 +1,9 @@
 from rest_framework import serializers, status
 from rest_framework.response import Response
 
-from .models import Radio
+from .models import CompanyProfile
 
-class RadioSerializer(serializers.ModelSerializer):
+class CompanyProfileSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Radio
+        model = CompanyProfile
         fields = '__all__'

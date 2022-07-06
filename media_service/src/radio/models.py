@@ -14,12 +14,14 @@ class Radio(models.Model):
         verbose_name_plural = _("Radios")
         ordering = ['id']
 
-    station_name = models.CharField(max_length=120,default='Unknown_radio',null=False , blank= False)
-    station_frequency = models.FloatField(default=0, null=False , blank= False)
-    station_url = models.CharField(max_length=120, default = "", null=False , blank= False)
-    station_description = models.TextField(blank=True, null=True, max_length=200)
-    cover_image = models.FileField(upload_to=radio_cover_images, validators=[validators.validate_image_extension], null=True)
-    user =  models.IntegerField(default=0)
+    station_name = models.CharField(max_length=100, default='Unknown_radio', null=False, blank= False)
+    station_frequency = models.FloatField(default=0, null=False, blank=False)
+    station_url = models.CharField(max_length=1023, default = "", null=False , blank= False)
+    station_cover = models.FileField(upload_to=radio_cover_images, validators=[validators.validate_image_extension], null=False, blank=False)
+    station_description = models.TextField(blank=True, null=True, max_length=1023)
+    user_id =  models.IntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
         return '%d: %s' % (self.pk, self.station_name)

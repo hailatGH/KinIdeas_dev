@@ -18,8 +18,8 @@ urlpatterns = [
     path('episode/<int:pk>/delete/', views.episode_destroy_view),
     path('episode/<int:pk>/', views.episode_detail_view),
 
-    path('category/', views.category_list_create_view),
-    path('category/<int:pk>/update/', views.category_update_view),
-    path('category/<int:pk>/delete/', views.category_destroy_view),
-    path('category/<int:pk>/', views.category_detail_view)
+    path('category/', views.podcast_category_list_create_view),
+    path('category/<int:pk>/update/', views.podcast_category_update_view),
+    path('category/<int:pk>/delete/', views.podcast_category_destroy_view),
+    path('category/<int:pk>/', views.podcast_category_detail_view)
 ]

@@ -1,7 +1,7 @@
 from rest_framework import generics
 
-from .models import Writer, Narrator, Category, Book, Chapter
-from .serializers import WriterSerializer, NarratorSerializer, CategorySerializer, BookSerializer, ChapterSerializer
+from .models import Writer, Narrator, BookCategory, Book, Chapter
+from .serializers import WriterSerializer, NarratorSerializer, BookCategorySerializer, BookSerializer, ChapterSerializer
 
 # Create your views here.
 
@@ -69,37 +69,37 @@ class NarratorDestroyAPIView(generics.DestroyAPIView):
 
 narrator_destroy_view = NarratorDestroyAPIView.as_view()
 
-class CategoryListCreateAPIView(generics.ListCreateAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
+class BookCategoryListCreateAPIView(generics.ListCreateAPIView):
+    queryset = BookCategory.objects.all()
+    serializer_class = BookCategorySerializer
 
-category_list_create_view = CategoryListCreateAPIView.as_view()
+book_category_list_create_view = BookCategoryListCreateAPIView.as_view()
 
-class CategoryDetailAPIView(generics.RetrieveAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
+class BookCategoryDetailAPIView(generics.RetrieveAPIView):
+    queryset = BookCategory.objects.all()
+    serializer_class = BookCategorySerializer
 
-category_detail_view = CategoryDetailAPIView.as_view()
+book_category_detail_view = BookCategoryDetailAPIView.as_view()
 
-class CategoryUpdateAPIView(generics.UpdateAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
+class BookCategoryUpdateAPIView(generics.UpdateAPIView):
+    queryset = BookCategory.objects.all()
+    serializer_class = BookCategorySerializer
     lookup_field = 'pk'
 
     def perform_update(self, serializer):
         instance = serializer.save()
 
-category_update_view = CategoryUpdateAPIView.as_view()
+book_category_update_view = BookCategoryUpdateAPIView.as_view()
 
-class CategoryDestroyAPIView(generics.DestroyAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
+class BookCategoryDestroyAPIView(generics.DestroyAPIView):
+    queryset = BookCategory.objects.all()
+    serializer_class = BookCategorySerializer
     lookup_field = 'pk'
 
     def perform_destroy(self, instance):
         super().perform_destroy(instance)
 
-category_destroy_view = CategoryDestroyAPIView.as_view()
+book_category_destroy_view = BookCategoryDestroyAPIView.as_view()
 
 class BookListCreateAPIView(generics.ListCreateAPIView):
     queryset = Book.objects.all()

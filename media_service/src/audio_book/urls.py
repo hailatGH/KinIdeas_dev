@@ -13,10 +13,10 @@ urlpatterns = [
     path('narrator/<int:pk>/delete/', views.narrator_destroy_view),
     path('narrator/<int:pk>/', views.narrator_detail_view),
 
-    path('category/', views.category_list_create_view),
-    path('category/<int:pk>/update/', views.category_update_view),
-    path('category/<int:pk>/delete/', views.category_destroy_view),
-    path('category/<int:pk>/', views.category_detail_view),
+    path('category/', views.book_category_list_create_view),
+    path('category/<int:pk>/update/', views.book_category_update_view),
+    path('category/<int:pk>/delete/', views.book_category_destroy_view),
+    path('category/<int:pk>/', views.book_category_detail_view),
 
     path('book/', views.book_list_create_view),
     path('book/<int:pk>/update/', views.book_update_view),

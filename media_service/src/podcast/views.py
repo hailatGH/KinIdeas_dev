@@ -1,7 +1,7 @@
 from rest_framework import generics
 
-from .models import Host, Season, Category, Episode
-from .serializers import HostSerializer, SeasonSerializer, EpisodeSerializer, CategorySerializer
+from .models import Host, Season, PodcastCategory, Episode
+from .serializers import HostSerializer, SeasonSerializer, EpisodeSerializer, PodcastCategorySerializer
 
 # Create your views here.
 
@@ -104,34 +104,34 @@ class EpisodeDestroyAPIView(generics.DestroyAPIView):
 
 episode_destroy_view = EpisodeDestroyAPIView.as_view()
 
-class CategoryListCreateAPIView(generics.ListCreateAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
+class PodcastCategoryListCreateAPIView(generics.ListCreateAPIView):
+    queryset = PodcastCategory.objects.all()
+    serializer_class = PodcastCategorySerializer
 
-category_list_create_view = CategoryListCreateAPIView.as_view()
+podcast_category_list_create_view = PodcastCategoryListCreateAPIView.as_view()
 
-class CategoryDetailAPIView(generics.RetrieveAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
+class PodcastCategoryDetailAPIView(generics.RetrieveAPIView):
+    queryset = PodcastCategory.objects.all()
+    serializer_class = PodcastCategorySerializer
 
-category_detail_view = CategoryDetailAPIView.as_view()
+podcast_category_detail_view = PodcastCategoryDetailAPIView.as_view()
 
-class CategoryUpdateAPIView(generics.UpdateAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
+class PodcastCategoryUpdateAPIView(generics.UpdateAPIView):
+    queryset = PodcastCategory.objects.all()
+    serializer_class = PodcastCategorySerializer
     lookup_field = 'pk'
 
     def perform_update(self, serializer):
         instance = serializer.save()
 
-category_update_view = CategoryUpdateAPIView.as_view()
+podcast_category_update_view = PodcastCategoryUpdateAPIView.as_view()
 
-class CategoryDestroyAPIView(generics.DestroyAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
+class PodcastCategoryDestroyAPIView(generics.DestroyAPIView):
+    queryset = PodcastCategory.objects.all()
+    serializer_class = PodcastCategorySerializer
     lookup_field = 'pk'
 
     def perform_destroy(self, instance):
         super().perform_destroy(instance)
 
-category_destroy_view = CategoryDestroyAPIView.as_view()
+podcast_category_destroy_view = PodcastCategoryDestroyAPIView.as_view()

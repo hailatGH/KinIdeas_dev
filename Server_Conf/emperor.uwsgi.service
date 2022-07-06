@@ -1,0 +1,9 @@
+[Unit]
+Description=uwsgi emperor for 34.79.102.235 website
+After=network.target
+[Service]
+User=hailemichael_atrsaw
+Restart=always
+ExecStart=/home/hailemichael_atrsaw/Virtual_Environments/media_service_env/bin/uwsgi --emperor /home/hailemichael_atrsaw/Virtual_Environments/media_service_env/vassals --uid www-data --gid www-data
+[Install]
+WantedBy=multi-user.target

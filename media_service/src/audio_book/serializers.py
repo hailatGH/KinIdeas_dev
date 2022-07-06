@@ -1,17 +1,22 @@
 from rest_framework import serializers, status
 from rest_framework.response import Response
 
-from .models import Writer, Narrator, Book, Category, Chapter
+from .models import Writer, Narrator, Book, BookCategory, Chapter
 
 class ChapterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Chapter
         fields = [
             'id',
-            'chapter_name',
+            'chapter_title',
             'chapter_description',
-            'book',
             'chapter_file',
+            'chapter_status',
+            'chapter_release_date',
+            'book_id',
+            'user_id',
+            'created_at',
+            'updated_at'
         ]
 
 class BookSerializer(serializers.ModelSerializer):
@@ -21,25 +26,31 @@ class BookSerializer(serializers.ModelSerializer):
         model = Book
         fields = [
             'id',
-            'book_name',
-            'book_description',
-            'book_release_date',
+            'book_title',
             'book_cover',
-            'writer',
-            'narrator',
-            'category',
+            'book_description',
+            'writer_id',
+            'narrator_id',
+            'book_category_id',
+            'user_id',
+            'created_at',
+            'updated_at',
             'chapters',
         ]
 
-class CategorySerializer(serializers.ModelSerializer):
+class BookCategorySerializer(serializers.ModelSerializer):
     books_c = BookSerializer(many=True, required=False)
 
     class Meta:
-        model = Category
+        model = BookCategory
         fields = [
             'id',
-            'category_name',
-            'category_description',
+            'book_category_title',
+            'book_category_cover',
+            'book_category_description',
+            'user_id',
+            'created_at',
+            'updated_at',
             'books_c',
         ]
 
@@ -51,8 +62,12 @@ class NarratorSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'narrator_name',
-            'narrator_avatar',
+            'narrator_title',
+            'narrator_cover',
             'narrator_description',
+            'user_id',
+            'created_at',
+            'updated_at',
             'books_n',
         ]
 
@@ -64,7 +79,11 @@ class WriterSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'writer_name',
-            'writer_avatar',
+            'writer_title',
+            'writer_cover',
             'writer_description',
+            'user_id',
+            'created_at',
+            'updated_at',
             'books_w',
         ]

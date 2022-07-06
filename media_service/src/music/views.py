@@ -1,7 +1,7 @@
 from rest_framework import generics
 
-from .models import Artist, Album, Genre, Track
-from .serializers import ArtistSerializer, AlbumSerializer, TrackSerializer, GenreSerializer
+from .models import Artist, Album, Genre, Track, Lyrics
+from .serializers import ArtistSerializer, AlbumSerializer, TrackSerializer, GenreSerializer, LyricsSerializer
 
 # Create your views here.
 
@@ -135,3 +135,35 @@ class GenreDestroyAPIView(generics.DestroyAPIView):
         super().perform_destroy(instance)
 
 genre_destroy_view = GenreDestroyAPIView.as_view()
+
+class LyricsListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Lyrics.objects.all()
+    serializer_class = LyricsSerializer
+
+lyrics_list_create_view = LyricsListCreateAPIView.as_view()
+
+class LyricsDetailAPIView(generics.RetrieveAPIView):
+    queryset = Lyrics.objects.all()
+    serializer_class = LyricsSerializer
+
+lyrics_detail_view = LyricsDetailAPIView.as_view()
+
+class LyricsUpdateAPIView(generics.UpdateAPIView):
+    queryset = Lyrics.objects.all()
+    serializer_class = LyricsSerializer
+    lookup_field = 'pk'
+
+    def perform_update(self, serializer):
+        instance = serializer.save()
+
+lyrics_update_view = LyricsUpdateAPIView.as_view()
+
+class LyricsDestroyAPIView(generics.DestroyAPIView):
+    queryset = Lyrics.objects.all()
+    serializer_class = LyricsSerializer
+    lookup_field = 'pk'
+
+    def perform_destroy(self, instance):
+        super().perform_destroy(instance)
+
+lyrics_destroy_view = LyricsDestroyAPIView.as_view()
