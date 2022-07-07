@@ -1,5 +1,5 @@
 [Unit]
-Description=uwsgi emperor for 34.79.102.235 website
+Description=uwsgi emperor for 35.205.130.170 website
 After=network.target
 [Service]
 User=hailemichael_atrsaw

@@ -180,7 +180,7 @@ CORS_ALLOW_HEADERS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'kinmusic_media',
+        'NAME': 'kinmusic_media2',
         'USER': 'admin',
         'PASSWORD': 'playground',
         'HOST': '10.191.0.3',

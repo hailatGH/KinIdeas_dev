@@ -1,9 +1,0 @@
-sudo apt-get install python3.9-dev gcc
-pip install uwsgi
-uwsgi --http :8444 --module core.wsgi
-sudo apt-get install nginx
-cd /etc/nginx/sites-available/
-cp /home/hailemichael_atrsaw/Projects/Django/KinIdeas_dev/Server_Conf/media.conf .
-cd /home/hailemichael_atrsaw/Projects/Django/KinIdeas_dev/media_service/src
-cp ../../Server_Conf/media_uwsgi.ini ../../Server_Conf/uwsgi_params .
-
