@@ -3,6 +3,8 @@
 __pycache__
 audio_book/__pycache__
 audio_book/migrations
+company_profile/__pycache__
+company_profile/migrations
 core/__pycache__
 media
 music/__pycache__

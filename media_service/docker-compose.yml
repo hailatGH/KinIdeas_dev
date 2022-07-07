@@ -6,7 +6,5 @@ services:
       - '8000:8000'
     volumes:
       - .:/app
-      - /app/src/static
-      - /app/src/media
     environment:
       - PORT=8000
