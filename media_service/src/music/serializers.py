@@ -18,7 +18,7 @@ class LyricsSerializer(serializers.ModelSerializer):
         ]
 
 class TrackSerializer(serializers.ModelSerializer):
-    lyrics = LyricsSerializer(many=False, required=False)
+    lyrics = LyricsSerializer(many=True, required=False)
 
     class Meta:
         model = Track

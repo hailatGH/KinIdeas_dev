@@ -9,7 +9,7 @@ def artists_cover_images(instance, filename):
     # The directory arrangment will be [media/artists_cover_images/{artist_name}/{filename}]
 
 def albums_cover_images(instance, filename):
-    return '/'.join(['albums_cover_images', str(instance.album_name), filename])
+    return '/'.join(['albums_cover_images', str(instance.album_title), filename])
     # The directory arrangment will be [media/albums_cover_images/{album_name}/{filename}]
 
 def genres_cover_images(instance, filename):
